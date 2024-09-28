@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:orientation="vertical"
+    android:scrollbarStyle="outsideInset"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="NOTAS ACADÊMICAS"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadastro"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Nome">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cadastro_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:inputType="text"
+                android:paddingVertical="15dp">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="E-mail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cadastro_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:inputType="textEmailAddress"
+                android:paddingVertical="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Idade">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cadastro_idade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:gravity="end"
+                android:inputType="number"
+                android:paddingVertical="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Disciplina">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cadastro_disciplina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:inputType="text"
+                android:paddingVertical="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Nota 1º bimestre">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cadastro_nota1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789."
+                android:gravity="end"
+                android:inputType="numberDecimal"
+                android:paddingVertical="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nota 2º bimestre">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cadastro_nota2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789."
+                android:gravity="end"
+                android:inputType="numberDecimal"
+                android:paddingVertical="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/btConfirmar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONFIRMAR"
+                app:layout_constraintEnd_toStartOf="@id/btLimparRes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btLimparRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIMPAR TUDO"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btConfirmar"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <GridLayout
+            android:id="@+id/gridResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:columnCount="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Nome:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/res_nome"
+                android:layout_width="0dp"
+                android:layout_gravity="fill"
+                android:paddingLeft="5dp"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="E-mail:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/res_email"
+                android:layout_width="0dp"
+                android:layout_gravity="fill"
+                android:paddingLeft="5dp"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Idade:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/res_idade"
+                android:layout_width="0dp"
+                android:layout_gravity="fill"
+                android:paddingLeft="5dp"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Disciplina:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/res_disciplina"
+                android:layout_width="0dp"
+                android:layout_gravity="fill"
+                android:paddingLeft="5dp"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Nota 1º Bim.:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/res_nota1"
+                android:layout_width="0dp"
+                android:layout_gravity="fill"
+                android:paddingLeft="5dp"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Nota 2º Bim.:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/res_nota2"
+                android:layout_width="0dp"
+                android:layout_gravity="fill"
+                android:paddingLeft="5dp"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Média:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/res_media"
+                android:layout_width="0dp"
+                android:layout_gravity="fill"
+                android:paddingLeft="5dp"
+                android:textSize="25sp" />
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/res_final"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+    </LinearLayout>
+</ScrollView>
